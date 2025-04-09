@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dacxjubgt0c87"
+path="res://.godot/imported/Fire.aseprite-cfceae14148ca5f5d09c9ae9eab50366.res"
+
+[deps]
+
+source_file="res://assets/Tiny Swords (Update 010)/Effects/Fire/Fire.aseprite"
+dest_files=["res://.godot/imported/Fire.aseprite-cfceae14148ca5f5d09c9ae9eab50366.res"]
+
+[params]
+

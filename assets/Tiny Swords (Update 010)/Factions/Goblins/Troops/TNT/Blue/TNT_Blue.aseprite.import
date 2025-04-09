@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cg2vkcd043wya"
+path="res://.godot/imported/TNT_Blue.aseprite-df469ed80c2fe4ddabfe2bc1063e22cc.res"
+
+[deps]
+
+source_file="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Blue/TNT_Blue.aseprite"
+dest_files=["res://.godot/imported/TNT_Blue.aseprite-df469ed80c2fe4ddabfe2bc1063e22cc.res"]
+
+[params]
+
