@@ -1,13 +1,15 @@
-[gd_scene load_steps=19 format=4 uid="uid://dakn502ki5qnf"]
+[gd_scene load_steps=21 format=4 uid="uid://dakn502ki5qnf"]
 
 [ext_resource type="Texture2D" uid="uid://dgghrx8y0uqkj" path="res://assets/Texture/TX Tileset Grass.png" id="1_bfobw"]
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_xljga"]
 [ext_resource type="PackedScene" uid="uid://cqocsd2mj6t3r" path="res://scenes/Swordsmantest.tscn" id="2_1xyo8"]
 [ext_resource type="Texture2D" uid="uid://c44pxk84i3tkf" path="res://assets/Texture/TX Tileset Wall.png" id="2_8aawq"]
-[ext_resource type="PackedScene" uid="uid://ckvwihqbc5mam" path="res://scenes/Player.tscn" id="2_63m2m"]
 [ext_resource type="Texture2D" uid="uid://bwgb78x7bmosx" path="res://assets/Texture/TX Tileset Stone Ground.png" id="3_bby4y"]
 [ext_resource type="Texture2D" uid="uid://b5u0puyn5famk" path="res://assets/Texture/TX Struct.png" id="4_f36j6"]
 [ext_resource type="PackedScene" uid="uid://d3e35opefcdcd" path="res://scenes/enemytest.tscn" id="6_7mntd"]
+[ext_resource type="FontFile" uid="uid://cupsibf4hbilt" path="res://assets/Fonts/Raw/ARCADECLASSIC.TTF" id="9_iowl4"]
+[ext_resource type="PackedScene" uid="uid://b4henpdqfyhl1" path="res://scenes/Gunman.tscn" id="9_m0vm3"]
+[ext_resource type="AudioStream" uid="uid://bk5sjto8thu83" path="res://assets/Audio/466998__bone666138__8-bit-video-game-fight-music.wav" id="10_ydypn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xnon"]
 texture = ExtResource("1_bfobw")
@@ -562,7 +564,7 @@ source_geometry_group_name = &"navigation"
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_xljga")
-new_character_scene = ExtResource("2_63m2m")
+new_character_scene = ExtResource("9_m0vm3")
 swordsman_scene = ExtResource("2_1xyo8")
 
 [node name="GrassLayer" type="TileMapLayer" parent="." groups=["navigation"]]
@@ -571,7 +573,7 @@ tile_set = SubResource("TileSet_1p1lu")
 navigation_enabled = false
 
 [node name="WallLayer" type="TileMapLayer" parent="." groups=["navigation"]]
-tile_map_data = PackedByteArray("AAALAAAAAAABAAIAAAALAAEAAAABAAIAAAALAAIAAAABAAIAAAALAAMAAAABAAIAAAALAAQAAAABAAIAAAALAAUAAAABAAIAAAALAAYAAAABAAIAAAALAAcAAAABAAMAAAAMAAcAAAACAAMAAAANAAcAAAACAAMAAAAOAAcAAAACAAMAAAAPAAcAAAACAAMAAAAQAAcAAAACAAMAAAARAAcAAAACAAMAAAASAAcAAAABAAMAAAAMAAgAAAACAAQAAAANAAgAAAACAAQAAAAOAAgAAAACAAQAAAAPAAgAAAACAAQAAAAQAAgAAAACAAQAAAARAAgAAAACAAQAAAALAAgAAAABAAQAAAASAAgAAAADAAQAAAAVAAgAAAABAAQAAAAcAAgAAAADAAQAAAAWAAgAAAACAAQAAAAXAAgAAAACAAQAAAAYAAgAAAACAAQAAAAZAAgAAAACAAQAAAAaAAgAAAACAAQAAAAbAAgAAAACAAQAAAAWAAcAAAACAAMAAAAXAAcAAAACAAMAAAAYAAcAAAACAAMAAAAZAAcAAAACAAMAAAAaAAcAAAACAAMAAAAbAAcAAAACAAMAAAAVAAcAAAABAAMAAAAcAAcAAAADAAMAAAAcAAYAAAADAAIAAAAcAAUAAAADAAIAAAAcAAQAAAADAAIAAAAcAAMAAAADAAIAAAAcAAIAAAADAAIAAAAcAAEAAAADAAIAAAAcAAAAAAADAAIAAAA=")
+tile_map_data = PackedByteArray("AAALAAAAAAABAAIAAAALAAEAAAABAAIAAAALAAIAAAABAAIAAAALAAMAAAABAAIAAAALAAQAAAABAAIAAAALAAUAAAABAAIAAAALAAYAAAABAAIAAAALAAcAAAABAAMAAAAMAAcAAAACAAMAAAANAAcAAAACAAMAAAAOAAcAAAACAAMAAAAPAAcAAAACAAMAAAAQAAcAAAACAAMAAAARAAcAAAACAAMAAAASAAcAAAABAAMAAAAMAAgAAAACAAQAAAANAAgAAAACAAQAAAAOAAgAAAACAAQAAAAPAAgAAAACAAQAAAAQAAgAAAACAAQAAAARAAgAAAACAAQAAAALAAgAAAABAAQAAAASAAgAAAADAAQAAAAVAAgAAAABAAQAAAAcAAgAAAADAAQAAAAWAAgAAAACAAQAAAAXAAgAAAACAAQAAAAYAAgAAAACAAQAAAAZAAgAAAACAAQAAAAaAAgAAAACAAQAAAAbAAgAAAACAAQAAAAWAAcAAAACAAMAAAAXAAcAAAACAAMAAAAYAAcAAAACAAMAAAAZAAcAAAACAAMAAAAaAAcAAAACAAMAAAAbAAcAAAACAAMAAAAVAAcAAAABAAMAAAAcAAcAAAADAAMAAAAcAAYAAAADAAIAAAAcAAUAAAADAAIAAAAcAAQAAAADAAIAAAAcAAMAAAADAAIAAAAcAAIAAAADAAIAAAAcAAEAAAADAAIAAAAcAAAAAAADAAIAAAAQAP7/AAAFAAEAAAAQAP//AAAFAAIAAAARAP7/AAAGAAEAAAARAP//AAAGAAIAAAASAP7/AAAHAAEAAAASAP//AAAHAAIAAAATAP7/AAAFAAEAAAATAP//AAAFAAIAAAAUAP7/AAAGAAEAAAAUAP//AAAGAAIAAAAVAP7/AAAHAAEAAAAVAP//AAAHAAIAAAAWAP7/AAAFAAEAAAAWAP//AAAFAAIAAAAXAP7/AAAGAAEAAAAXAP//AAAGAAIAAAAYAP7/AAAHAAEAAAAYAP//AAAHAAIAAAANAP7/AAAFAAEAAAANAP//AAAFAAIAAAAOAP7/AAAGAAEAAAAOAP//AAAGAAIAAAAPAP7/AAAHAAEAAAAPAP//AAAHAAIAAAAZAP7/AAAFAAEAAAAZAP//AAAFAAIAAAAaAP7/AAAGAAEAAAAaAP//AAAGAAIAAAAbAP7/AAAHAAEAAAAbAP//AAAHAAIAAAD//wAAAAAGAAEAAAD//wEAAAAGAAIAAAD//wIAAAAGAAEAAAD//wMAAAAGAAIAAAD//wQAAAAGAAEAAAD//wUAAAAGAAIAAAD//wYAAAAGAAEAAAD//wcAAAAGAAIAAAD//wgAAAAGAAEAAAD//wkAAAAGAAIAAAD//woAAAAGAAEAAAD//wsAAAAGAAIAAAD//wwAAAAGAAEAAAD//w0AAAAGAAIAAAD//w4AAAAGAAEAAAD//w8AAAAGAAIAAAD//xAAAAAGAAEAAAD//xEAAAAGAAIAAAD//xIAAAAGAAEAAAD//xMAAAAGAAIAAAAkAAAAAAAGAAEAAAAkAAEAAAAGAAIAAAAkAAIAAAAGAAEAAAAkAAMAAAAGAAIAAAAkAAQAAAAGAAEAAAAkAAUAAAAGAAIAAAAkAAYAAAAGAAEAAAAkAAcAAAAGAAIAAAAkAAgAAAAGAAEAAAAkAAkAAAAGAAIAAAAkAAoAAAAGAAEAAAAkAAsAAAAGAAIAAAAkAAwAAAAGAAEAAAAkAA0AAAAGAAIAAAAkAA4AAAAGAAEAAAAkAA8AAAAGAAIAAAAkABAAAAAGAAEAAAAkABEAAAAGAAIAAAAkABIAAAAGAAEAAAAkABMAAAAGAAIAAAAiABQAAAABAAEAAAAjABQAAAACAAEAAAAkABQAAAADAAEAAAAfABQAAAABAAEAAAAgABQAAAACAAEAAAAhABQAAAADAAEAAAAcABQAAAABAAEAAAAdABQAAAACAAEAAAAeABQAAAADAAEAAAAZABQAAAABAAEAAAAaABQAAAACAAEAAAAbABQAAAADAAEAAAAWABQAAAABAAEAAAAXABQAAAACAAEAAAAYABQAAAADAAEAAAATABQAAAABAAEAAAAUABQAAAACAAEAAAAVABQAAAADAAEAAAAQABQAAAABAAEAAAARABQAAAACAAEAAAASABQAAAADAAEAAAANABQAAAABAAEAAAAOABQAAAACAAEAAAAPABQAAAADAAEAAAAKABQAAAABAAEAAAALABQAAAACAAEAAAAMABQAAAADAAEAAAAHABQAAAABAAEAAAAIABQAAAACAAEAAAAJABQAAAADAAEAAAAEABQAAAABAAEAAAAFABQAAAACAAEAAAAGABQAAAADAAEAAAABABQAAAABAAEAAAACABQAAAACAAEAAAADABQAAAADAAEAAAD//xQAAAACAAEAAAAAABQAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_qltv7")
 navigation_enabled = false
 
@@ -579,13 +581,101 @@ navigation_enabled = false
 navigation_polygon = SubResource("NavigationPolygon_1lp7r")
 
 [node name="Swordsmantest" parent="." instance=ExtResource("2_1xyo8")]
-position = Vector2(591, 534)
+position = Vector2(639, 85)
 
-[node name="enemytest" parent="." instance=ExtResource("6_7mntd")]
-position = Vector2(538, 186)
+[node name="enemytest" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(236, 272)
+player = NodePath("../Swordsmantest")
 
-[node name="enemytest2" parent="." instance=ExtResource("6_7mntd")]
-position = Vector2(146, 178)
+[node name="enemytest2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(79, 178)
+player = NodePath("../Swordsmantest")
 
-[node name="enemytest3" parent="." instance=ExtResource("6_7mntd")]
-position = Vector2(1043, 261)
+[node name="enemytest3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(1059, 184)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(100, 311)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(260, 594)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(372, 591)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(323, 514)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(971, 571)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(1109, 288)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(995, 275)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(866, 591)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="enemytest9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_7mntd")]
+position = Vector2(908, 497)
+scale = Vector2(-1, 1)
+player = NodePath("../Swordsmantest")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LevelCompletePanel" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 620.0
+offset_top = 276.0
+offset_right = 660.0
+offset_bottom = 303.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelCompletePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/LevelCompletePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_iowl4")
+theme_override_font_sizes/font_size = 64
+text = "Level Completed
+"
+
+[node name="Label2" type="Label" parent="UI/LevelCompletePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_iowl4")
+theme_override_font_sizes/font_size = 32
+text = "you  will be moved to  a  new  level"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(52, 77)
+stream = ExtResource("10_ydypn")
+autoplay = true

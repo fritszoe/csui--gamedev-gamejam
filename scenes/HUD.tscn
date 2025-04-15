@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c86ae8sv3h7qk"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_lbgsh"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_lbgsh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 32.0

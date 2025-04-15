@@ -1,6 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://cqocsd2mj6t3r"]
+[gd_scene load_steps=16 format=4 uid="uid://cqocsd2mj6t3r"]
 
 [ext_resource type="Script" path="res://scripts/swordsmantest.gd" id="1_6xk5y"]
+[ext_resource type="AudioStream" uid="uid://4aq2jr7by4w7" path="res://assets/Audio/446383__hadahector__electric-woosh.wav" id="2_1oc3v"]
+[ext_resource type="AudioStream" uid="uid://bkta1c5mk32h6" path="res://assets/Audio/649358__sonofxaudio__sword_wind01.wav" id="3_d7jhc"]
+[ext_resource type="AudioStream" uid="uid://bmbsydjy05wem" path="res://assets/Audio/Hit Sounds/478494__joao_janz__robot-grunt-sound-1_2.wav" id="4_a5mqc"]
+[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="5_ugukk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0lpd"]
 size = Vector2(46.472, 67.528)
@@ -109,7 +113,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_2yjeu"]
-length = 1.3
+length = 0.828
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -254,6 +258,19 @@ libraries = {
 }
 playback_auto_capture = false
 speed_scale = 1.6
+
+[node name="MeleeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1oc3v")
+volume_db = 10.0
+
+[node name="PowSlashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d7jhc")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a5mqc")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_ugukk")]
+position = Vector2(-55, 52)
 
 [connection signal="body_entered" from="Sprite2D/MeleeAtk" to="." method="_on_melee_atk_body_entered"]
 [connection signal="body_entered" from="Sprite2D/PowSlashArea" to="." method="_on_pow_slash_area_body_entered"]

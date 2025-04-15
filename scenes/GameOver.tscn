@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://2nyg32v8qupr"]
+
+[ext_resource type="Texture2D" uid="uid://dtmb85pvby3k0" path="res://assets/GameOver.png" id="1_s0klw"]
+[ext_resource type="FontFile" uid="uid://cupsibf4hbilt" path="res://assets/Fonts/Raw/ARCADECLASSIC.TTF" id="2_np3fq"]
+[ext_resource type="Script" path="res://scripts/retry_button.gd" id="3_e27cc"]
+[ext_resource type="AudioStream" uid="uid://bsakd1cdpfqmc" path="res://assets/Audio/110216__cheesepuff__sad-song.mp3" id="4_evrm6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xujv4"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_xujv4")
+position = Vector2(580.5, 339)
+scale = Vector2(1.12793, 0.65625)
+texture = ExtResource("1_s0klw")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": ""
+},
+"slice_section": false
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 349.0
+offset_top = 226.0
+offset_right = 929.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0.411765, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_np3fq")
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = 548.0
+offset_top = 333.0
+offset_right = 733.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("2_np3fq")
+theme_override_font_sizes/font_size = 64
+text = "RETRY"
+script = ExtResource("3_e27cc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_evrm6")
+volume_db = 24.0
+autoplay = true
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]

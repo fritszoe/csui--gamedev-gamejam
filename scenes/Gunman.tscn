@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=4 uid="uid://b4henpdqfyhl1"]
+
+[ext_resource type="Script" path="res://scripts/gunman.gd" id="1_3o5h7"]
+[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="2_413p6"]
+[ext_resource type="AudioStream" uid="uid://bmbsydjy05wem" path="res://assets/Audio/Hit Sounds/478494__joao_janz__robot-grunt-sound-1_2.wav" id="3_37pxi"]
+[ext_resource type="AudioStream" uid="uid://dqvrbpw13pgwn" path="res://assets/Audio/Hit Sounds/390970__morganpurkis__single-gunshot-43.wav" id="3_l1wxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0lpd"]
+size = Vector2(46.472, 67.528)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_mft1x"]
+_data = PackedByteArray("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")
+size_override = Vector2(768, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2074"]
+size = Vector2(23.9964, 12.9754)
+
+[sub_resource type="Animation" id="Animation_uq3pt"]
+length = 0.52
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.26, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_8nm2n"]
+length = 0.828
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.594633),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7sgn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.6]
+}
+
+[sub_resource type="Animation" id="Animation_1j6lh"]
+length = 0.47
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.215, 0.3, 0.385),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_vpcnp"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bcyx"]
+_data = {
+"Fire": SubResource("Animation_vpcnp"),
+"Idle": SubResource("Animation_uq3pt"),
+"Melee": SubResource("Animation_8nm2n"),
+"RESET": SubResource("Animation_7sgn3"),
+"Walk": SubResource("Animation_1j6lh")
+}
+
+[node name="Gunman" type="CharacterBody2D"]
+position = Vector2(401, 215)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_3o5h7")
+
+[node name="GunmanCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.235962, 11.764)
+shape = SubResource("RectangleShape2D_e0lpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-14, 78)
+scale = Vector2(3.1651, 2.77447)
+texture = SubResource("PortableCompressedTexture2D_mft1x")
+hframes = 6
+vframes = 5
+frame = 19
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "C:/GameDev/assets/aseprite/Cyc-gunman.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5e232b354d6402253dcd43145546124e"
+
+[node name="GunAtk" type="Area2D" parent="Sprite2D"]
+position = Vector2(30.3308, -21.2653)
+collision_layer = 2
+collision_mask = 3
+
+[node name="GunAtkCollision" type="CollisionShape2D" parent="Sprite2D/GunAtk"]
+position = Vector2(0.955582, 0.360428)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i2074")
+debug_color = Color(0.76048, 0.419193, 0.459801, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2bcyx")
+}
+playback_auto_capture = false
+speed_scale = 1.6
+
+[node name="HealthBar" parent="." instance=ExtResource("2_413p6")]
+position = Vector2(-54, 48)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_37pxi")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l1wxa")
+
+[connection signal="body_entered" from="Sprite2D/GunAtk" to="." method="_on_gun_atk_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

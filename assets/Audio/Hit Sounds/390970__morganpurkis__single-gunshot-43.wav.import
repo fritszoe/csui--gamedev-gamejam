@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqvrbpw13pgwn"
+path="res://.godot/imported/390970__morganpurkis__single-gunshot-43.wav-d0ccc878cf17ab4176fb51afe9fc7e52.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Hit Sounds/390970__morganpurkis__single-gunshot-43.wav"
+dest_files=["res://.godot/imported/390970__morganpurkis__single-gunshot-43.wav-d0ccc878cf17ab4176fb51afe9fc7e52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

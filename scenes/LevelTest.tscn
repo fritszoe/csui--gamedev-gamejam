@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://djm7e8q5lcosm"]
+
+[ext_resource type="PackedScene" uid="uid://b4henpdqfyhl1" path="res://scenes/Gunman.tscn" id="1_rb2yv"]
+[ext_resource type="PackedScene" uid="uid://d3e35opefcdcd" path="res://scenes/enemytest.tscn" id="2_7iltu"]
+[ext_resource type="PackedScene" uid="uid://dg2sxqeyky5lp" path="res://scenes/enemy2.tscn" id="3_5wpk4"]
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="Gunman" parent="." instance=ExtResource("1_rb2yv")]
+
+[node name="enemytest" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_7iltu")]
+position = Vector2(799, 272)
+player = NodePath("../Gunman")
+
+[node name="enemytest2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_5wpk4")]
+position = Vector2(332, 463)
+player = NodePath("../Gunman")
