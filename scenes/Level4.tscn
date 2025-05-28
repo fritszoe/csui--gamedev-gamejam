@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bph3serx6nma8"]
+[gd_scene load_steps=23 format=4 uid="uid://bph3serx6nma8"]
 
 [ext_resource type="Script" path="res://scripts/lastLevel.gd" id="1_f0ve1"]
 [ext_resource type="PackedScene" uid="uid://b4henpdqfyhl1" path="res://scenes/Gunman.tscn" id="2_cyy8k"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d37q1bkrm4r1a" path="res://scenes/enemy3.tscn" id="8_2owuf"]
 [ext_resource type="FontFile" uid="uid://cupsibf4hbilt" path="res://assets/Fonts/Raw/ARCADECLASSIC.TTF" id="10_f27ms"]
 [ext_resource type="AudioStream" uid="uid://dro2niqj4nwwj" path="res://assets/Audio/721472__victor_natas__boss-fight.wav" id="10_yubpr"]
+[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="12_sdtom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xnon"]
 texture = ExtResource("4_a70xh")
@@ -637,3 +638,6 @@ text = "Congratulations you've won"
 position = Vector2(52, 77)
 stream = ExtResource("10_yubpr")
 autoplay = true
+
+[node name="HealthBar" parent="." instance=ExtResource("12_sdtom")]
+target_path = NodePath("../Swordsmantest")

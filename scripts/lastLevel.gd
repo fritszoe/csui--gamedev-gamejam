@@ -72,6 +72,10 @@ func swap_character(new_scene: PackedScene) -> void:
 	_sync_character_health()
 	
 	emit_signal("player_changed", current_character)  # ✅ Kasih tahu AI player baru
+	var health_bar = get_node_or_null("HealthBar")
+	if health_bar:
+		print("Setting target to: ", current_character)
+		health_bar.set_target(current_character)
 
 func register_all_enemies():
 	# Temukan semua enemy di level

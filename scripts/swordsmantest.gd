@@ -198,6 +198,12 @@ func _on_attack_timer_timeout() -> void:
 
 func update_facing_direction(direction: int) -> void:
 	transform.x.x = direction
+	
+	if has_node("HealthBar"):
+		print(true)
+		var hb = $HealthBar
+		print(hb)
+		hb.scale.x = 1  # pastikan tetap tidak mirror
 
 func take_damage(amount: int, knockback_direction: Vector2, _is_strong: bool = false) -> void:
 	current_health -= amount

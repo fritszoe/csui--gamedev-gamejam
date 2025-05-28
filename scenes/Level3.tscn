@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ceqwavsnnm10h"]
+[gd_scene load_steps=27 format=4 uid="uid://ceqwavsnnm10h"]
 
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_l3354"]
 [ext_resource type="PackedScene" uid="uid://b4henpdqfyhl1" path="res://scenes/Gunman.tscn" id="2_814ol"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://br7cpj4j8qayi" path="res://assets/Audio/548619__zhr__fighting-music.mp3" id="10_j4cbq"]
 [ext_resource type="FontFile" uid="uid://cupsibf4hbilt" path="res://assets/Fonts/Raw/ARCADECLASSIC.TTF" id="10_w50bh"]
 [ext_resource type="PackedScene" uid="uid://d37q1bkrm4r1a" path="res://scenes/enemy3.tscn" id="11_1dsra"]
+[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="14_uk7y2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xnon"]
 texture = ExtResource("4_stjg3")
@@ -918,3 +919,6 @@ scale = Vector2(-1, 1)
 [node name="redKnight8" parent="." instance=ExtResource("9_r8oun")]
 position = Vector2(890, 192)
 scale = Vector2(-1, 1)
+
+[node name="HealthBar" parent="." instance=ExtResource("14_uk7y2")]
+target_path = NodePath("../Swordsmantest")

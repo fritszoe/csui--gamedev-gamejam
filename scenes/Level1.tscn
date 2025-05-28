@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dakn502ki5qnf"]
+[gd_scene load_steps=22 format=4 uid="uid://dakn502ki5qnf"]
 
 [ext_resource type="Texture2D" uid="uid://dgghrx8y0uqkj" path="res://assets/Texture/TX Tileset Grass.png" id="1_bfobw"]
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_xljga"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cupsibf4hbilt" path="res://assets/Fonts/Raw/ARCADECLASSIC.TTF" id="9_iowl4"]
 [ext_resource type="PackedScene" uid="uid://b4henpdqfyhl1" path="res://scenes/Gunman.tscn" id="9_m0vm3"]
 [ext_resource type="AudioStream" uid="uid://bk5sjto8thu83" path="res://assets/Audio/466998__bone666138__8-bit-video-game-fight-music.wav" id="10_ydypn"]
+[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="11_gbyhd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xnon"]
 texture = ExtResource("1_bfobw")
@@ -679,3 +680,6 @@ text = "you  will be moved to  a  new  level"
 position = Vector2(52, 77)
 stream = ExtResource("10_ydypn")
 autoplay = true
+
+[node name="HealthBar" parent="." instance=ExtResource("11_gbyhd")]
+target_path = NodePath("../Swordsmantest")

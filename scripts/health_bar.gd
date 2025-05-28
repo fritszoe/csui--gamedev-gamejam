@@ -1,32 +1,37 @@
-# HealthBar.gd
 extends Node2D
 
+@export var target_path: NodePath
+@onready var target = get_node(target_path)
 @onready var progress_bar = $ProgressBar
-var parent_player = null
-var level = null
 
 func _ready():
-	# Mendapatkan parent (player) yang memiliki healthbar ini
-	parent_player = get_parent()
-	level = parent_player.get_parent()
+	progress_bar.max_value = target.max_health
+	progress_bar.value = target.current_health
+
+	if target.has_signal("health_changed"):
+		target.health_changed.connect(_on_health_changed)
+
+
+func set_target(new_target: Node2D):
+	target = new_target
+	print(new_target)
 	
-	# Atur ukuran dan posisi
-	progress_bar.max_value = parent_player.max_health
-	progress_bar.value = parent_player.current_health
-	
-	# Connect health_changed signal jika ada
-	if parent_player.has_signal("health_changed"):
-		parent_player.health_changed.connect(_on_health_changed)
-		
-	if level.has_signal("player_health_changed"):
-		if level.is_connected("player_health_changed", _on_health_changed):
-			level.disconnect("player_health_changed", _on_health_changed)
-		level.connect("player_health_changed", _on_health_changed)
-	
+	print(target.max_health)
+	print(target.current_health)
+	progress_bar.max_value = target.max_health
+	progress_bar.value = target.current_health
+
+	if target.has_signal("health_changed"):
+		# Disconnect dulu biar aman kalau sudah connect sebelumnya
+		if target.is_connected("health_changed", _on_health_changed):
+			target.disconnect("health_changed", _on_health_changed)
+		target.connect("health_changed", _on_health_changed)
+
+func _process(delta):
+	if target:
+		global_position = target.global_position + Vector2(-50, -50)  # posisi di atas kepala
+		rotation = 0
+		scale = Vector2(1, 1)  # pastikan tidak ikut flip
+
 func _on_health_changed(new_health):
 	progress_bar.value = new_health
-	
-	# Optional: Animasi feedback saat health berubah
-	modulate = Color(1.0, 0.3, 0.3)  # Merah
-	await get_tree().create_timer(0.1).timeout
-	modulate = Color(1.0, 1.0, 1.0)  # Normal

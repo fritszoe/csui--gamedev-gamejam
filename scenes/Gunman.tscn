@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://b4henpdqfyhl1"]
+[gd_scene load_steps=13 format=4 uid="uid://b4henpdqfyhl1"]
 
 [ext_resource type="Script" path="res://scripts/gunman.gd" id="1_3o5h7"]
-[ext_resource type="PackedScene" uid="uid://bio1fnqllg1up" path="res://scenes/HealthBar.tscn" id="2_413p6"]
 [ext_resource type="AudioStream" uid="uid://bmbsydjy05wem" path="res://assets/Audio/Hit Sounds/478494__joao_janz__robot-grunt-sound-1_2.wav" id="3_37pxi"]
 [ext_resource type="AudioStream" uid="uid://dqvrbpw13pgwn" path="res://assets/Audio/Hit Sounds/390970__morganpurkis__single-gunshot-43.wav" id="3_l1wxa"]
 
@@ -14,6 +13,22 @@ size_override = Vector2(768, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2074"]
 size = Vector2(23.9964, 12.9754)
+
+[sub_resource type="Animation" id="Animation_vpcnp"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+}
 
 [sub_resource type="Animation" id="Animation_uq3pt"]
 length = 0.52
@@ -78,22 +93,6 @@ tracks/0/keys = {
 "values": [0, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_vpcnp"]
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bcyx"]
 _data = {
 "Fire": SubResource("Animation_vpcnp"),
@@ -150,7 +149,6 @@ collision_mask = 3
 
 [node name="GunAtkCollision" type="CollisionShape2D" parent="Sprite2D/GunAtk"]
 position = Vector2(0.955582, 0.360428)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i2074")
 debug_color = Color(0.76048, 0.419193, 0.459801, 0.42)
 
@@ -160,9 +158,6 @@ libraries = {
 }
 playback_auto_capture = false
 speed_scale = 1.6
-
-[node name="HealthBar" parent="." instance=ExtResource("2_413p6")]
-position = Vector2(-54, 48)
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_37pxi")

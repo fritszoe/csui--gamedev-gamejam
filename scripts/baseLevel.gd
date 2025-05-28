@@ -38,6 +38,7 @@ func _sync_character_health():
 	current_character.current_health = player_current_health
 	current_character.max_health = player_max_health
 	
+	current_character.emit_signal("health_changed", player_current_health)
 	# Pancarkan signal agar UI diperbarui
 	emit_signal("player_health_changed", player_current_health)
 
@@ -72,7 +73,11 @@ func swap_character(new_scene: PackedScene) -> void:
 	_sync_character_health()
 	
 	emit_signal("player_changed", current_character)  # ✅ Kasih tahu AI player baru
-
+	
+	var health_bar = get_node_or_null("HealthBar")
+	if health_bar:
+		print("Setting target to: ", current_character)
+		health_bar.set_target(current_character)
 func register_all_enemies():
 	# Temukan semua enemy di level
 	var enemies = get_tree().get_nodes_in_group("enemy")
